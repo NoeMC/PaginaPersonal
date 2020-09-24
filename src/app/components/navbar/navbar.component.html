@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark" [ngClass]="{'estilo1':getPestana() == 1,'estilo2':getPestana() == 2,'estilo3':getPestana() == 3}">
+    <a class="navbar-brand" href="#">
+        <img src="./assets/imagenes/codigo.svg" width="30" height="30" alt="" loading="lazy">
+    </a>
+    <button class="navbar-toggler" [ngClass]="{'collapsed':getEstado()}" type="button" (click)="cambiarEstado()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse collapse" [ngClass]="{'show':getEstado()}">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" routerLinkActive="active">
+                <a class="nav-link fuenteNav" [routerLink]="['home']" (click)="cambiarEstado();cambiarPesta(1)">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item fuenteNav" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['formacion']" (click)="cambiarEstado();cambiarPesta(2)">Contacto</a>
+            </li>
+        </ul>
+
+        <a class="navbar-brand" href="https://github.com/NoeMC">
+            <img src="./assets/imagenes/github.svg" width="30" height="30" alt="" loading="lazy">
+        </a>
+    </div>
+</nav>
